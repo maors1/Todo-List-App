@@ -1,44 +1,6 @@
-<<<<<<< HEAD
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
-
-var index = require('./routes/index')
-var tasks = require('./routes/tasks')
-
-var port = 3000;
-
-var app = express();
-
-//View Engine
-app.set('views',path.join(__dirname, 'views'));
-//Specifize the template system
-app.set('view engine','ejs');
-app.engine('html', require('ejs').renderFile);
-
-//Set Static Folder
-//Angular 2 files going to be here
-app.use(express.static(path.join(__dirname, 'client')));
-
-//Body Parser MiddelWare
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
-
-app.use('/', index);
-app.use('/api',tasks);
-
-app.listen(port, function(){
-    console.log('Server started on port: '+port);
-});
-
-
-
-||||||| merged common ancestors
-=======
-var express = require('express');
-var path = require('path');
-var bodyParser = require('body-parser');
-
 var index = require('./routes/index')
 var tasks = require('./routes/tasks')
 
@@ -67,7 +29,3 @@ app.use('/api',tasks);
 app.listen(port, function(){
     console.log('Server started on port: '+port);
 });
-
-
-
->>>>>>> ver001
